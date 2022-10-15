@@ -1,0 +1,170 @@
+$color: #1fdf64;
+$header-bg: #101010;
+
+@font-face {
+  font-family: 'Poppins-regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../fonts/poppins-v20-latin-regular.eot');
+  /* IE9 Compat Modes */
+  src: local(''),
+    url('../../fonts/poppins-v20-latin-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('../../fonts/poppins-v20-latin-regular.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('../../fonts/poppins-v20-latin-regular.woff') format('woff'),
+    /* Modern Browsers */ url('../../fonts/poppins-v20-latin-regular.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('../../fonts/poppins-v20-latin-regular.svg#Poppins') format('svg');
+  /* Legacy iOS */
+}
+
+body {
+  font-size: 14px;
+  font-family: 'Poppins-regular', sans-serif;
+  background: linear-gradient(45deg, #101010, rgb(11, 4, 39)) !important;
+  color: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+aside {
+  float: left;
+  height: 100vh;
+  background: transparent !important;
+
+  .navbar {
+    &__container {
+      width: 17rem;
+    }
+
+    &-brand {
+      margin: 1rem !important;
+    }
+
+    &-nav {
+      .nav-item {
+        transition: 0.5s ease-in-out;
+
+        .icon {
+          font-size: 1.7rem;
+        }
+
+        span {
+          font-size: 1rem;
+          font-weight: 700;
+        }
+
+        span:hover {
+          color: $color;
+        }
+      }
+    }
+  }
+}
+
+.header {
+  height: 65px;
+
+  &-btn {
+    &__login {
+      width: 8rem;
+      height: 3rem;
+    }
+
+    &__daftar {
+      width: 7rem;
+    }
+  }
+
+  &-menu {
+    display: none;
+  }
+}
+
+.discover {
+  &__col {
+    transition: all 0.3s ease-in-out ;
+  }
+  &__col:hover {
+    opacity: 0.7;
+  }
+  &__card {
+    padding: 0.9rem;
+    width: 100%;
+    background: rgba(136, 136, 136, 0.068);
+    aspect-ratio: 1/1;
+    backdrop-filter: blur(20px);
+    transition: all .5s ease !important;
+    z-index: -9;
+   }
+  .loader {
+    padding: 0.9rem;
+    width: 100%;
+    background: rgba(136, 136, 136, 0.068);
+    aspect-ratio: 1/1;
+    backdrop-filter: blur(15px);
+    transition: all 0.2s ease-in-out !important;
+  }
+  .play {
+    display: none;
+  }
+  .play.icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+}
+.audio-container {
+  height: 8rem;
+  background: rgba(102, 102, 102, 0.212);
+  backdrop-filter: blur(15px);
+  transform: translateY(100%);
+  audio {
+    background: hsl(0, 0%, 100%);
+    height: 100% ;
+  }
+  .progress {
+    background: rgba(102, 102, 102, 0.212);
+    height: 5px;
+  }
+  .btn {
+    background: rgba(102, 102, 102, 0.212);
+    border: 0;
+    margin: 10px;
+  }
+}
+.audio-container.active {
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    &-menu {
+      display: block;
+      float: right;
+    }
+  }
+
+  aside {
+    .navbar {
+      position: fixed;
+       background: rgba(41, 41, 41, 0.212);
+      backdrop-filter: blur(20px);
+      opacity: 0.85;
+      left: -3px;
+      transition: 0.4s ease-out;
+
+      &.hide {
+        transform: translateX(-100%);
+      }
+    }
+  }
+}
